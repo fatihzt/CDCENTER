@@ -1,0 +1,12 @@
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\bin\Release\net6.0\FatihCdCenter.Model.deps.json
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\bin\Release\net6.0\FatihCdCenter.Model.dll
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\bin\Release\net6.0\FatihCdCenter.Model.pdb
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.AssemblyInfo.cs
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.dll
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\refint\FatihCdCenter.Model.dll
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\FatihCdCenter.Model.pdb
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Model\obj\Release\net6.0\ref\FatihCdCenter.Model.dll
