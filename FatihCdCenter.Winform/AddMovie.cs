@@ -149,5 +149,7 @@ namespace FatihCdCenter.Winform
                 MessageBox.Show(Environment.NewLine + ex.Message, caption: "Error! double click ");
             } 
         }
+
+       
     }
 }

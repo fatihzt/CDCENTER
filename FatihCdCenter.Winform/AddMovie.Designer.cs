@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovie));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,11 +46,7 @@
             this.Movie_IsFinish = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mduration_text = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.moviesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.movielist_grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -227,14 +222,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // moviesBindingSource
-            // 
-            this.moviesBindingSource.DataSource = typeof(FatihCdCenter.Core.Movies);
-            // 
-            // moviesBindingSource1
-            // 
-            this.moviesBindingSource1.DataSource = typeof(FatihCdCenter.Model.Movies);
-            // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -259,8 +246,6 @@
             this.Text = "AddMovie";
             this.Load += new System.EventHandler(this.AddMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.movielist_grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +270,5 @@
         private DataGridViewTextBoxColumn Movies_Summary;
         private DataGridViewTextBoxColumn Movies_Duration;
         private DataGridViewTextBoxColumn Movie_IsFinish;
-        private BindingSource moviesBindingSource;
-        private BindingSource moviesBindingSource1;
     }
 }

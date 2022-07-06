@@ -58,8 +58,6 @@ namespace FatihCdCenter.Winform
         void TakeTVSeriesInformation()
         {
             Model.TVSeries tvSeries = new Model.TVSeries();
-
-
             try
             {
                 tvseries_grid.DataSource = Movies.GetAllMovies();
