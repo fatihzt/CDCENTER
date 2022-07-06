@@ -37,6 +37,11 @@ namespace FatihCdCenter.Winform
             addMovie.ShowDialog();
             
         }
-       
+
+        private void Contact_btn_Click(object sender, EventArgs e)
+        {
+            ContactUs contactUs = new ContactUs();
+            contactUs.ShowDialog();
+        }
     }
 }

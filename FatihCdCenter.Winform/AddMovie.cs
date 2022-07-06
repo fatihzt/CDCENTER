@@ -25,23 +25,12 @@ namespace FatihCdCenter.Winform
             InitializeComponent();
             
             Id = id;
-            SqlConnection con = Connection.GetConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select top 1 [Id],[Name],[MoviesSummary],[MoviesDuration],[IsFinish] from Movies where Id=@Id";
-            cmd.Parameters.AddWithValue("@Id", Id);
+            
+            Model.Movies movies = new Model.Movies();
+            movies.Id= Id;
             try
             {
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    mname_text.Text = dr.GetString(1);
-                    msummary_text.Text=dr.GetString(2);
-                    mduration_text.Text = dr.GetString(3);
-                    Movie_IsFinish.Tag = dr.GetString(4);
-                }
-                con.Close();
+                Movies.SelectTop(movies);
             }
             catch (Exception ex)
             {
@@ -52,7 +41,7 @@ namespace FatihCdCenter.Winform
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Core.Movies moviesManager=new Core.Movies();
+            
             Model.Movies movies=new Model.Movies();
             movies.Name = mname_text.Text;
             movies.MovieSummary = msummary_text.Text;
@@ -61,7 +50,7 @@ namespace FatihCdCenter.Winform
             
             try
             {
-                moviesManager.Create(movies);
+                Movies.Create(movies);
                 MessageBox.Show("Saved successfully",caption:"Information");
             }
             catch (Exception ex)
@@ -75,40 +64,28 @@ namespace FatihCdCenter.Winform
         }
          void TakeMovieInformation()
         {
-            SqlConnection con = Connection.GetConnection();
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.Connection = con;
-            cmd.CommandText = "select [Id],[Name],[MovieSummary],[MovieDuration],[IsFinish] from Movies";
+             
+            Model.Movies movies = new Model.Movies();
+            
+            
             try
             {
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                movielist_grid.Rows.Clear();
-                while (dr.Read())
-                {
-                    movielist_grid.Rows.Add(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3),dr.GetBoolean(4));
-
-                }
+                movielist_grid.DataSource = Movies.GetAllMovies();
+                
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(Environment.NewLine + ex.Message, caption: "Error take");
             }
-            finally
-            {
-                if (con.State != ConnectionState.Closed)
-                {
-                    con.Close();
-                }
-            }
+            
 
         }
 
         private void AddMovie_Load(object sender, EventArgs e)
         {
             TakeMovieInformation();
+            
         }
 
         private void remove_movie_btn_Click(object sender, EventArgs e)
@@ -119,26 +96,24 @@ namespace FatihCdCenter.Winform
                 return;
             }
             object value = movielist_grid.SelectedRows[0].Cells[0].Value;
-            int Id = (int)value;
-            Core.Movies moviesRemoving = new Core.Movies();
-            moviesRemoving.Delete(Id);
+            int Id = (int)value; 
+            Movies.Delete(Id);
             TakeMovieInformation();
 
         }
 
         private void edit_movie_btn_Click(object sender, EventArgs e)
         {
-            if(movielist_grid.SelectedRows.Count == 0)
+            if (movielist_grid.SelectedRows.Count == 0)
             {
                 return;
             }
-            
             object value = movielist_grid.SelectedRows[0].Cells[0].Value;
             int Id=(int)value;
-            Core.Movies moviesupdating = new Core.Movies();
+            
             try
             {
-                moviesupdating.Update(Id,mname_text.Text,msummary_text.Text,mduration_text.Text,isfinishmov_check.Checked);
+                Movies.Update(Id,mname_text.Text,msummary_text.Text,mduration_text.Text,isfinishmov_check.Checked);
                 MessageBox.Show("Update Successfully Done", caption: "Information");
             }
             catch (Exception ex)
@@ -155,8 +130,24 @@ namespace FatihCdCenter.Winform
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MainPage mainPage = new MainPage();
-            mainPage.Show();
+            Close();
+        }
+
+        private void movielist_grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                
+                mname_text.Text = this.movielist_grid.CurrentRow.Cells[1].Value?.ToString() ?? "";
+                msummary_text.Text = this.movielist_grid.CurrentRow.Cells[2].Value?.ToString() ?? "";
+                mduration_text.Text = this.movielist_grid.CurrentRow.Cells[3].Value?.ToString() ?? "";
+                //isfinishmov_check.Checked = this.movielist_grid.CurrentRow.Cells[4];
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Environment.NewLine + ex.Message, caption: "Error! double click ");
+            } 
         }
     }
 }

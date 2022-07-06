@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FatihCdCenter.Core
 {
-    public class Movies
+    public static class Movies
     {
-        public int Create(Model.Movies entity)
+        public static int Create(Model.Movies entity)
         {
             try
             {
@@ -41,8 +41,39 @@ namespace FatihCdCenter.Core
                 return -1;
             }
         }
+        public static IEnumerable<Model.Movies> SelectTop(Model.Movies entity)
+        {
+            try
+            {
+                SqlConnection con = Connection.GetConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select top 1 [Id],[Name],[MoviesSummary],[MoviesDuration],[IsFinish] from Movies where Id=@Id";
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                List<Model.Movies> MoviesListTop = new List<Model.Movies>();
+                while (dr.Read())
+                {
+                    Model.Movies movies = new Model.Movies();
+                    movies.Id = Convert.ToInt32(dr["Id"]);
+                    movies.Name = dr["Name"].ToString();
+                    movies.MovieSummary = dr["MovieSummary"].ToString();
+                    movies.MovieDuration = dr["MovieDuration"].ToString();
+                    movies.IsFinish = (bool)dr["IsFinish"];
+                    MoviesListTop.Add(movies);
+                }
+                con.Close();
+                return MoviesListTop;
 
-        public bool Update(Model.Movies entity)
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public static bool Update(Model.Movies entity)
         {
             try
             {
@@ -71,7 +102,7 @@ namespace FatihCdCenter.Core
             }
         }
        
-        public bool Update(int Id,string name,string movieSummary,string movieDuration,bool isFinish)
+        public static bool Update(int Id,string name,string movieSummary,string movieDuration,bool isFinish)
         {
             try
             {
@@ -102,7 +133,7 @@ namespace FatihCdCenter.Core
             }
         }
 
-        public bool Delete(Model.Movies entity)
+        public static bool Delete(Model.Movies entity)
         {
             try
             {
@@ -127,7 +158,7 @@ namespace FatihCdCenter.Core
             }
         }
 
-        public bool Delete(int Id)
+        public static bool Delete(int Id)
         {
             try
             {
@@ -152,7 +183,7 @@ namespace FatihCdCenter.Core
             }
         }
 
-        public IEnumerable<Model.Movies> GetAllMovies()
+        public static IEnumerable<Model.Movies> GetAllMovies()
         {
             try
             {
@@ -170,9 +201,9 @@ namespace FatihCdCenter.Core
                 {
                     Model.Movies movie = new Model.Movies();
                     movie.Id = Convert.ToInt32(dr["Id"]);
-                    movie.Name = dr["Name"].ToString();
-                    movie.MovieSummary = dr["MovieSummary"].ToString();
-                    movie.MovieDuration = dr["MovieDuration"].ToString();
+                    movie.Name = dr["Name"]?.ToString() ?? "";
+                    movie.MovieSummary = dr["MovieSummary"]?.ToString() ?? "";
+                    movie.MovieDuration = dr["MovieDuration"]?.ToString() ?? "";
                     movie.IsFinish = (bool)dr["IsFinish"];
 
                     MoviesList.Add(movie);
@@ -185,7 +216,7 @@ namespace FatihCdCenter.Core
                 throw;
             }
         }
-        public Model.Movies GetMoviesById(int id)
+        public static Model.Movies GetMoviesById(int id)
         {
             try
             {

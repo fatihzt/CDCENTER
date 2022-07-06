@@ -16,5 +16,10 @@ namespace FatihCdCenter.Winform
         {
             InitializeComponent();
         }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

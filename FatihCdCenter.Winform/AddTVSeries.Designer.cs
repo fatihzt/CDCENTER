@@ -124,6 +124,7 @@
             this.tvseries_grid.Name = "tvseries_grid";
             this.tvseries_grid.ReadOnly = true;
             this.tvseries_grid.RowTemplate.Height = 25;
+            this.tvseries_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tvseries_grid.Size = new System.Drawing.Size(535, 288);
             this.tvseries_grid.TabIndex = 14;
             // 
@@ -239,6 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddTVSeries";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddTVSeries";
             this.Load += new System.EventHandler(this.AddTVSeries_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tvseries_grid)).EndInit();

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FatihCdCenter.Core
 {
-    public class TVSeries
+    public static class TVSeries
     {
-        public int Create(Model.TVSeries entity)
+        public static int Create(Model.TVSeries entity)
         {
             try
             {
@@ -32,7 +32,38 @@ namespace FatihCdCenter.Core
                 return -1;
             }
         }
-        public bool Update(Model.TVSeries entity)
+        public static IEnumerable<Model.TVSeries> SelectTop(Model.TVSeries entity)
+        {
+            try
+            {
+                SqlConnection con = Connection.GetConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select top 1 [Id],[Name],[TVSeriesSummary],[TVSeriesSeason],[IsFinish] from TVSeries where Id=@Id";
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                List<Model.TVSeries> TVSeriesListTop = new List<Model.TVSeries>();
+                while (dr.Read())
+                {
+                    Model.TVSeries tvSeries = new Model.TVSeries();
+                    tvSeries.Id = Convert.ToInt32(dr["Id"]);
+                    tvSeries.Name = dr["Name"].ToString();
+                    tvSeries.TVSeriesSummary = dr["TVSeriesSummary"].ToString();
+                    tvSeries.TVSeriesSeason = dr["TVSeriesSeason"].ToString();
+                    tvSeries.IsFinish = (bool)dr["IsFinish"];
+                    TVSeriesListTop.Add(tvSeries);
+                }
+                con.Close();
+                return TVSeriesListTop;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public static bool Update(Model.TVSeries entity)
         {
             try
             {
@@ -55,7 +86,7 @@ namespace FatihCdCenter.Core
             }
 
         }
-        public bool Update(int Id,string name,string tvseriesSummary,string tvseriesSeason,bool isFinish)
+        public static bool Update(int Id,string name,string tvseriesSummary,string tvseriesSeason,bool isFinish)
         {
             try
             {
@@ -84,7 +115,7 @@ namespace FatihCdCenter.Core
                 return false;
             }
         }
-        public bool Delete(Model.TVSeries entity)
+        public static bool Delete(Model.TVSeries entity)
         {
             try
             {
@@ -104,7 +135,7 @@ namespace FatihCdCenter.Core
                 return false;
             }
         }
-        public bool Delete(int Id)
+        public static bool Delete(int Id)
         {
             try
             {
@@ -124,7 +155,7 @@ namespace FatihCdCenter.Core
                 return false;
             }
         }
-        public IEnumerable<Model.TVSeries> GetAllTVSeries()
+        public static IEnumerable<Model.TVSeries> GetAllTVSeries()
         {
             try
             {
@@ -155,7 +186,7 @@ namespace FatihCdCenter.Core
                 throw;
             }
         }
-        public Model.TVSeries GetTVSeriesById(int id)
+        public static Model.TVSeries GetTVSeriesById(int id)
         {
             try
             {

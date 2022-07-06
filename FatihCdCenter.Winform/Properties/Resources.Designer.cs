@@ -113,6 +113,16 @@ namespace FatihCdCenter.Winform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ledbim {
+            get {
+                object obj = ResourceManager.GetObject("ledbim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap output_onlinepngtools__11_ {
             get {
                 object obj = ResourceManager.GetObject("output-onlinepngtools (11)", resourceCulture);
@@ -136,6 +146,16 @@ namespace FatihCdCenter.Winform.Properties {
         internal static System.Drawing.Bitmap output_onlinepngtools__13_ {
             get {
                 object obj = ResourceManager.GetObject("output-onlinepngtools (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinepngtools__16_ {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinepngtools (16)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

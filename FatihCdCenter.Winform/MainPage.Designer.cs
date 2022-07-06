@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.Credit_btn = new System.Windows.Forms.Button();
             this.Tvseries_btn = new System.Windows.Forms.Button();
             this.Mainpage_lb = new System.Windows.Forms.Label();
             this.Movies_btn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Contact_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -43,11 +44,11 @@
             // 
             // Credit_btn
             // 
-            this.Credit_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Credit_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Credit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Credit_btn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Credit_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Credit_btn.Location = new System.Drawing.Point(12, 320);
+            this.Credit_btn.Location = new System.Drawing.Point(7, 320);
             this.Credit_btn.Name = "Credit_btn";
             this.Credit_btn.Size = new System.Drawing.Size(240, 50);
             this.Credit_btn.TabIndex = 9;
@@ -61,7 +62,7 @@
             this.Tvseries_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Tvseries_btn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Tvseries_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Tvseries_btn.Location = new System.Drawing.Point(281, 106);
+            this.Tvseries_btn.Location = new System.Drawing.Point(305, 106);
             this.Tvseries_btn.Name = "Tvseries_btn";
             this.Tvseries_btn.Size = new System.Drawing.Size(225, 63);
             this.Tvseries_btn.TabIndex = 8;
@@ -71,6 +72,7 @@
             // 
             // Mainpage_lb
             // 
+            this.Mainpage_lb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Mainpage_lb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Mainpage_lb.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Mainpage_lb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -87,7 +89,7 @@
             this.Movies_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Movies_btn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Movies_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Movies_btn.Location = new System.Drawing.Point(281, 12);
+            this.Movies_btn.Location = new System.Drawing.Point(305, 12);
             this.Movies_btn.Name = "Movies_btn";
             this.Movies_btn.Size = new System.Drawing.Size(225, 63);
             this.Movies_btn.TabIndex = 6;
@@ -107,6 +109,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox1.Image = global::FatihCdCenter.Winform.Properties.Resources.output_onlinepngtools__13_;
             this.pictureBox1.Location = new System.Drawing.Point(12, 267);
@@ -115,43 +118,49 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(644, 318);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 50);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Contact Us";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox2.Image = global::FatihCdCenter.Winform.Properties.Resources.icons8_contact_us_50;
-            this.pictureBox2.Location = new System.Drawing.Point(595, 318);
+            this.pictureBox2.Location = new System.Drawing.Point(624, 318);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
+            // 
+            // Contact_btn
+            // 
+            this.Contact_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Contact_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Contact_btn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Contact_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Contact_btn.Location = new System.Drawing.Point(673, 320);
+            this.Contact_btn.Name = "Contact_btn";
+            this.Contact_btn.Size = new System.Drawing.Size(140, 45);
+            this.Contact_btn.TabIndex = 13;
+            this.Contact_btn.Text = "Contact Us";
+            this.Contact_btn.UseVisualStyleBackColor = false;
+            this.Contact_btn.Click += new System.EventHandler(this.Contact_btn_Click);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(796, 377);
+            this.ClientSize = new System.Drawing.Size(820, 377);
+            this.Controls.Add(this.Contact_btn);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Credit_btn);
             this.Controls.Add(this.Tvseries_btn);
             this.Controls.Add(this.Mainpage_lb);
             this.Controls.Add(this.Movies_btn);
             this.Controls.Add(this.pictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -169,7 +178,7 @@
         private Button Movies_btn;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
-        private Label label1;
         private PictureBox pictureBox2;
+        private Button Contact_btn;
     }
 }

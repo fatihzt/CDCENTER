@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovie));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +47,11 @@
             this.Movie_IsFinish = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mduration_text = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.moviesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.movielist_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -168,8 +174,10 @@
             this.movielist_grid.Name = "movielist_grid";
             this.movielist_grid.ReadOnly = true;
             this.movielist_grid.RowTemplate.Height = 25;
+            this.movielist_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.movielist_grid.Size = new System.Drawing.Size(544, 301);
             this.movielist_grid.TabIndex = 21;
+            this.movielist_grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movielist_grid_CellDoubleClick);
             // 
             // Movies_Id
             // 
@@ -197,7 +205,7 @@
             // 
             // Movie_IsFinish
             // 
-            this.Movie_IsFinish.HeaderText = "Movie IsFinish";
+            this.Movie_IsFinish.HeaderText = "Movie Is Watched ?";
             this.Movie_IsFinish.Name = "Movie_IsFinish";
             this.Movie_IsFinish.ReadOnly = true;
             // 
@@ -219,6 +227,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // moviesBindingSource
+            // 
+            this.moviesBindingSource.DataSource = typeof(FatihCdCenter.Core.Movies);
+            // 
+            // moviesBindingSource1
+            // 
+            this.moviesBindingSource1.DataSource = typeof(FatihCdCenter.Model.Movies);
+            // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -237,10 +253,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddMovie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMovie";
             this.Load += new System.EventHandler(this.AddMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.movielist_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,12 +278,14 @@
         private Button remove_movie_btn;
         private Button save_movie_btn;
         private DataGridView movielist_grid;
+        private TextBox mduration_text;
+        private Button button1;
         private DataGridViewTextBoxColumn Movies_Id;
         private DataGridViewTextBoxColumn Movies_Name;
         private DataGridViewTextBoxColumn Movies_Summary;
         private DataGridViewTextBoxColumn Movies_Duration;
-        private TextBox mduration_text;
         private DataGridViewTextBoxColumn Movie_IsFinish;
-        private Button button1;
+        private BindingSource moviesBindingSource;
+        private BindingSource moviesBindingSource1;
     }
 }
