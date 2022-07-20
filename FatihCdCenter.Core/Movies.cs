@@ -11,6 +11,10 @@ namespace FatihCdCenter.Core
 {
     public static class Movies
     {
+        //IMAGE INSERT TO DATABASE AND LOAD THEM.
+
+       
+
         public static int Create(Model.Movies entity)
         {
             try
@@ -19,14 +23,17 @@ namespace FatihCdCenter.Core
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Connection = con;
-                cmd.CommandText = "insert into Movies([Name],[MovieSummary],[MovieDuration],[IsFinish]) values(@Name,@MovieSummary,@MovieDuration,@IsFinish) Select Scope_Identity()";
+                cmd.CommandText = "insert into Movies([Name],[MovieSummary],[MovieDuration],[IsTVSeries],[BannerPatch]) values (@Name,@MovieSummary,@MovieDuration,@IsTVSeries,@BannerPatch)  ";
+
                 cmd.Parameters.AddWithValue("@Name", entity.Name);
                 cmd.Parameters.AddWithValue("@MovieSummary", entity.MovieSummary);
                 cmd.Parameters.AddWithValue("@MovieDuration", entity.MovieDuration);
-                cmd.Parameters.AddWithValue("@IsFinish", entity.IsFinish);
+                cmd.Parameters.AddWithValue("@IsTVSeries", entity.IsTVSeries);
+                cmd.Parameters.AddWithValue("@BannerPatch", entity.BannerPatch);
+
 
                 con.Open();
-
+                
                 int value = cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -36,7 +43,7 @@ namespace FatihCdCenter.Core
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return -1;
             }
@@ -56,17 +63,18 @@ namespace FatihCdCenter.Core
                 {
                     Model.Movies movies = new Model.Movies();
                     movies.Id = Convert.ToInt32(dr["Id"]);
-                    movies.Name = dr["Name"].ToString();
-                    movies.MovieSummary = dr["MovieSummary"].ToString();
-                    movies.MovieDuration = dr["MovieDuration"].ToString();
-                    movies.IsFinish = (bool)dr["IsFinish"];
+                    movies.Name = dr["Name"]?.ToString()?? "";
+                    movies.MovieSummary = dr["MovieSummary"]?.ToString()?? "";
+                    movies.MovieDuration = dr["MovieDuration"]?.ToString()?? "";
+                    movies.IsTVSeries = (bool)dr["IsTVSeries"];
+                    movies.BannerPatch = dr["BannerPatch"]?.ToString() ?? "";
                     MoviesListTop.Add(movies);
                 }
                 con.Close();
                 return MoviesListTop;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 throw;
@@ -84,7 +92,8 @@ namespace FatihCdCenter.Core
                 cmd.Parameters.AddWithValue("@Name", entity.Name);
                 cmd.Parameters.AddWithValue("@MovieSummary", entity.MovieSummary);
                 cmd.Parameters.AddWithValue("@MovieDuration", entity.MovieDuration);
-                cmd.Parameters.AddWithValue("@IsFinish", entity.IsFinish);
+                cmd.Parameters.AddWithValue("@IsFinish", entity.IsTVSeries);
+                cmd.Parameters.AddWithValue("@BannerPatch", entity.BannerPatch);
                 cmd.Parameters.AddWithValue("@Id", entity.Id);
 
                 con.Open();
@@ -96,28 +105,26 @@ namespace FatihCdCenter.Core
                 return value;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
         }
        
-        public static bool Update(int Id,string name,string movieSummary,string movieDuration,bool isFinish)
+        public static bool Update(int Id,string name,string movieSummary,string movieDuration,bool isTVSeries,string bannerPatch)
         {
             try
             {
                 SqlConnection con =Connection.GetConnection();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "Update Movies set MovieSummary=@MovieSummary,MovieDuration=@MovieDuration IsFinish=@IsFinish where Id = @Id";
-               
+                cmd.CommandText = "Update Movies set MovieSummary=@MovieSummary,MovieDuration=@MovieDuration ,IsTVSeries=@IsTVSeries,BannerPatch=@BannerPatch where Id = @Id";
                 cmd.Parameters.AddWithValue("@Id",Id);
-                cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@MovieSummary", movieSummary);
-                cmd.Parameters.AddWithValue("@MovieDuration", movieDuration);
-                cmd.Parameters.AddWithValue("@IsFinish", isFinish);
-                
-
+                cmd.Parameters.AddWithValue("@Name",name);
+                cmd.Parameters.AddWithValue("@MovieSummary",movieSummary);
+                cmd.Parameters.AddWithValue("@MovieDuration",movieDuration);
+                cmd.Parameters.AddWithValue("@IsTVSeries", isTVSeries);
+                cmd.Parameters.AddWithValue("@BannerPatch", bannerPatch);
                 con.Open();
 
                 bool value = cmd.ExecuteNonQuery() > 0;
@@ -127,7 +134,7 @@ namespace FatihCdCenter.Core
                 return value;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -152,7 +159,7 @@ namespace FatihCdCenter.Core
                 return value;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -177,7 +184,7 @@ namespace FatihCdCenter.Core
                 return value;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -200,11 +207,12 @@ namespace FatihCdCenter.Core
                 while (dr.Read())
                 {
                     Model.Movies movie = new Model.Movies();
-                    movie.Id = Convert.ToInt32(dr["Id"]);
+                    movie.Id = (int)(int?) dr["Id"];
                     movie.Name = dr["Name"]?.ToString() ?? "";
                     movie.MovieSummary = dr["MovieSummary"]?.ToString() ?? "";
                     movie.MovieDuration = dr["MovieDuration"]?.ToString() ?? "";
-                    movie.IsFinish = (bool)dr["IsFinish"];
+                    movie.IsTVSeries = (bool)dr["IsTVSeries"];
+                    movie.BannerPatch = dr["BannerPatch"]?.ToString() ?? "";
 
                     MoviesList.Add(movie);
                 }
@@ -235,10 +243,11 @@ namespace FatihCdCenter.Core
                 while (dr.Read())
                 {
                     movie.Id = Convert.ToInt32(dr["Id"]);
-                    movie.Name = dr["Name"].ToString();
-                    movie.MovieSummary = dr["MovieSummary"].ToString();
-                    movie.MovieDuration = dr["MovieDuration"].ToString();
-                    movie.IsFinish = (bool)dr["IsFinish"];
+                    movie.Name = dr["Name"]?.ToString()?? "";
+                    movie.MovieSummary = dr["MovieSummary"]?.ToString()?? "";
+                    movie.MovieDuration = dr["MovieDuration"]?.ToString()?? "";
+                    movie.IsTVSeries = (bool)dr["IsTVSeries"];
+                    movie.BannerPatch = dr["BannerPatch"]?.ToString() ?? "";
                 }
                 con.Close();
                 return movie;
@@ -250,5 +259,6 @@ namespace FatihCdCenter.Core
             }
             
         }
+        
     }
 }

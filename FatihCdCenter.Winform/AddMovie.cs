@@ -14,6 +14,7 @@ namespace FatihCdCenter.Winform
 {
     public partial class AddMovie : Form
     {
+        private string fileName;
         private int Id;
         
         public AddMovie()
@@ -46,26 +47,31 @@ namespace FatihCdCenter.Winform
             movies.Name = mname_text.Text;
             movies.MovieSummary = msummary_text.Text;
             movies.MovieDuration = mduration_text.Text;
-            movies.IsFinish=isfinishmov_check.Checked;
+            movies.IsTVSeries=istvseries_check.Checked;
+            movies.BannerPatch = bannerpatch_text.Text;
             
             try
             {
                 Movies.Create(movies);
-                MessageBox.Show("Saved successfully",caption:"Information");
+                
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(Environment.NewLine + ex.Message, caption: "Error SaveMovie");
+                MessageBox.Show(Environment.NewLine + ex.Message, caption: "error save");
             }
             TakeMovieInformation();
-            
 
+            mname_text.Clear();
+            msummary_text.Clear();
+            mduration_text.Clear();
+            istvseries_check.Checked = false;
+            bannerpatch_text.Clear();
+            bannerpic.Image = null;
         }
          void TakeMovieInformation()
         {
              
-            Model.Movies movies = new Model.Movies();
             
             
             try
@@ -99,6 +105,10 @@ namespace FatihCdCenter.Winform
             int Id = (int)value; 
             Movies.Delete(Id);
             TakeMovieInformation();
+            mname_text.Clear();
+            msummary_text.Clear();
+            mduration_text.Clear();
+            istvseries_check.Checked = false;
 
         }
 
@@ -113,7 +123,7 @@ namespace FatihCdCenter.Winform
             
             try
             {
-                Movies.Update(Id,mname_text.Text,msummary_text.Text,mduration_text.Text,isfinishmov_check.Checked);
+                Movies.Update(Id,mname_text.Text,msummary_text.Text,mduration_text.Text,istvseries_check.Checked,bannerpatch_text.Text);
                 MessageBox.Show("Update Successfully Done", caption: "Information");
             }
             catch (Exception ex)
@@ -124,8 +134,12 @@ namespace FatihCdCenter.Winform
             
             
             TakeMovieInformation();
-            
-            
+            mname_text.Clear();
+            msummary_text.Clear();
+            mduration_text.Clear();
+            istvseries_check.Checked = false;
+            bannerpatch_text.Clear();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -141,7 +155,9 @@ namespace FatihCdCenter.Winform
                 mname_text.Text = this.movielist_grid.CurrentRow.Cells[1].Value?.ToString() ?? "";
                 msummary_text.Text = this.movielist_grid.CurrentRow.Cells[2].Value?.ToString() ?? "";
                 mduration_text.Text = this.movielist_grid.CurrentRow.Cells[3].Value?.ToString() ?? "";
-                //isfinishmov_check.Checked = this.movielist_grid.CurrentRow.Cells[4];
+                istvseries_check.Checked =this.movielist_grid.CurrentRow.Cells[4].ValueType == typeof(bool);
+                bannerpatch_text.Text = this.movielist_grid.CurrentRow.Cells[5].Value?.ToString() ?? "";
+                bannerpic.Image = Image.FromFile(bannerpatch_text.Text);
             }
             catch (Exception ex)
             {
@@ -150,6 +166,32 @@ namespace FatihCdCenter.Winform
             } 
         }
 
-       
+        private void movielist_grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        byte[] ConvertImageToByte(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
+      
+
+        private void openimg_btn_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog ofd=new OpenFileDialog() { Filter = "JPEG|*jpg", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = ofd.FileName;
+                    bannerpatch_text.Text = fileName;
+                    bannerpic.Image = Image.FromFile(fileName);
+                }
+            }
+        }
+
+        
     }
 }

@@ -12,6 +12,7 @@ namespace FatihCdCenter.Model
         public string Name { get; set; }
         public string MovieSummary { get; set; }
         public string MovieDuration { get; set; }
-        public bool IsFinish { get; set; }
+        public bool IsTVSeries { get; set; }
+        public string BannerPatch { get; set; }
     }
 }

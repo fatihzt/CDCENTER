@@ -4,16 +4,25 @@
     <Compile Update="AddMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AddTVSeries.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ContactUs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Credit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MainPage.cs">
+    <Compile Update="CustomerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoadingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegisterCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace FatihCdCenter.Winform
 {
@@ -20,6 +21,11 @@ namespace FatihCdCenter.Winform
         private void close_btn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("C:\\Users\\USER\\Desktop\\Masaüstü\\THINGS\\resimler");
         }
     }
 }

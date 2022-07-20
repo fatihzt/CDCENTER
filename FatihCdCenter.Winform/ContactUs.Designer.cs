@@ -47,7 +47,7 @@
             // close_btn
             // 
             this.close_btn.Image = global::FatihCdCenter.Winform.Properties.Resources.output_onlinepngtools__16_;
-            this.close_btn.Location = new System.Drawing.Point(247, 150);
+            this.close_btn.Location = new System.Drawing.Point(276, 26);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(50, 50);
             this.close_btn.TabIndex = 1;
@@ -58,10 +58,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(300, 212);
+            this.BackColor = System.Drawing.Color.OrangeRed;
+            this.ClientSize = new System.Drawing.Size(338, 125);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactUs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

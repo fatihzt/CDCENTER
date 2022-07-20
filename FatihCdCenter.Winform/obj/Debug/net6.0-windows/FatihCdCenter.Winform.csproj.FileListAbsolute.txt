@@ -1,8 +1,6 @@
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.csproj.AssemblyReference.cache
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.AddMovie.resources
-C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.AddTVSeries.resources
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.Credit.resources
-C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.MainPage.resources
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.Properties.Resources.resources
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.csproj.GenerateResource.cache
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.GeneratedMSBuildEditorConfig.editorconfig
@@ -31,3 +29,8 @@ C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.genruntimeconfig.cache
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\ref\FatihCdCenter.Winform.dll
 C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.ContactUs.resources
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.LoginPage.resources
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.LoadingPage.resources
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.AdminPage.resources
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.CustomerPage.resources
+C:\Users\USER\source\repos\FatihCdCenter\FatihCdCenter.Winform\obj\Debug\net6.0-windows\FatihCdCenter.Winform.RegisterCustomer.resources

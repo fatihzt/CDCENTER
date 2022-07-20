@@ -12,18 +12,14 @@ using System.Windows.Forms;
 
 namespace FatihCdCenter.Winform
 {
-    public partial class MainPage : Form
+    public partial class AdminPage : Form
     {
-        public MainPage()
+        public AdminPage()
         {
             InitializeComponent();
         }
 
-        private void Tvseries_btn_Click(object sender, EventArgs e)
-        {
-            AddTVSeries addTVSeries= new AddTVSeries();
-            addTVSeries.ShowDialog();
-        }
+        
 
         private void Credit_btn_Click(object sender, EventArgs e)
         {
@@ -42,6 +38,18 @@ namespace FatihCdCenter.Winform
         {
             ContactUs contactUs = new ContactUs();
             contactUs.ShowDialog();
+        }
+
+        private void loginpage_btn_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            this.Hide();
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

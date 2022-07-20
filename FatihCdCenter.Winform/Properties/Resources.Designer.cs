@@ -63,6 +63,26 @@ namespace FatihCdCenter.Winform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cd {
+            get {
+                object obj = ResourceManager.GetObject("cd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cd__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cd (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
@@ -76,6 +96,26 @@ namespace FatihCdCenter.Winform.Properties {
         internal static System.Drawing.Bitmap icons8_contact_us_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-contact-us-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_enter_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-enter-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_enter_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-enter-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
